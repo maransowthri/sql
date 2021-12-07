@@ -37,3 +37,18 @@ create table conversations(
     employer_id int,
     message text not null
 );
+
+
+create table sales (
+    -- MySQL
+    id int primary key auto_increment,
+    -- PostgreSQL
+    -- id serial primary key,
+    date_created timestamp default current_timestamp,
+    date_fulfilled timestamp,
+    customer_name varchar(250) not null,
+    product_name varchar(250) not null,
+    volume numeric(10, 2) check (volume >= 0),
+    is_recurring boolean default false,
+    is_disputed boolean default false
+)
