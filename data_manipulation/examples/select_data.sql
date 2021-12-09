@@ -23,3 +23,6 @@ select distinct customer_name from sales;
 
 -- 2nd most highest volume
 select volume from sales where volume <> (select volume from sales order by volume desc limit 1) order by volume desc limit 1;
+
+create view base_result as select * from sales where volume > 1000;
+select customer_name, product_name from base_result;
