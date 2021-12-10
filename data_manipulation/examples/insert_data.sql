@@ -8,3 +8,5 @@ insert into sales
 values
 (null, 'Learning Inc', 'Course Bundle', 4889.45, false, false),
 ('2022-04-10', 'Big Oil Inc', 'Trucks', 4000.45, false, true);
+
+insert into city values ('India', 'USA', 'Germany', 'Australia', 'Canada')

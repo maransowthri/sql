@@ -1,2 +1,5 @@
 -- For both
 CREATE DATABASE talently;
+CREATE DATABASE flipkart;
+CREATE DATABASE sales;
+CREATE DATABASE relations;

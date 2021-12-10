@@ -52,3 +52,26 @@ create table sales (
     is_recurring boolean default false,
     is_disputed boolean default false
 )
+
+create table users (
+    id int primary key auto_increment,
+    -- id serial primary key,
+    first_name varchar(300) not null,
+    last_name varchar(300) not null,
+    email varchar(300) not null,
+    address_id int not null
+);
+
+create table address (
+    id int primary key auto_increment,
+    -- id serial primary key,
+    street varchar(500) not null,
+    house_number varchar(50) not null,
+    city_id int not null
+);
+
+create table city (
+    id int primary key auto_increment,
+    -- id serial primary key,
+    name varchar(300) not null
+);

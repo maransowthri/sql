@@ -20,3 +20,21 @@ values
 (1, 2, 'Good Morning!'),
 (2, 3, 'Hope you are doing well!'),
 (3, 2, 'Have a great day!!');
+
+insert into city (name) values ('India'), ('USA'), ('Germany'), ('Australia'), ('Canada');
+
+insert into address
+(street, house_number, city_id)
+values
+('Malar Street', '113', 10),
+('Taramani Road', '133A', 11),
+('Anna Nagar', '45D', 12),
+('Singh Street', '67D', 13)
+
+insert into users
+(first_name, last_name, email, address_id)
+values
+('Maran', 'Sowthri', 'maran@gmail.com', 1),
+('Vignesh', 'S', 'vicky@gmail.com', 2),
+('Arjun', 'Muthiah', 'arjun@gmail.com', 3),
+('Rohit', 'Sharma', 'rohit@outlook.com', 4);
