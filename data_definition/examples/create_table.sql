@@ -53,13 +53,11 @@ create table sales (
     is_disputed boolean default false
 )
 
-create table users (
+-- references & on delete (restrict, cascade)
+create table city (
     id int primary key auto_increment,
     -- id serial primary key,
-    first_name varchar(300) not null,
-    last_name varchar(300) not null,
-    email varchar(300) not null,
-    address_id int not null
+    name varchar(300) not null
 );
 
 create table address (
@@ -67,11 +65,18 @@ create table address (
     -- id serial primary key,
     street varchar(500) not null,
     house_number varchar(50) not null,
-    city_id int not null
+    -- city_id int references city (id) on delete cascade
+    city_id int,
+    foreign key (city_id) references city (id) on delete cascade
 );
 
-create table city (
+create table users (
     id int primary key auto_increment,
     -- id serial primary key,
-    name varchar(300) not null
+    first_name varchar(300) not null,
+    last_name varchar(300) not null,
+    email varchar(300) not null,
+    -- address_id int references address (id) on delete cascade
+    address_id int,
+    foreign key (address_id) references address (id) on delete cascade
 );
