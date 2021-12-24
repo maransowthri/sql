@@ -43,11 +43,12 @@ create table project(
 
 create table project_employee(
     -- id int primary key auto_increment,
-    id serial primary key,
+    -- id serial primary key,
     employee_id int references employee(id) on delete cascade,
     -- employee_id int,
     -- foreign key (employee_id) references employee(id) on delete cascade,
-    project_id int references project(id) on delete cascade
+    project_id int references project(id) on delete cascade,
     -- project_id int,
     -- foreign key (project_id) references project(id) on delete cascade,
+    primary key (project_id, employee_id)
 );
