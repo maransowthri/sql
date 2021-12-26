@@ -9,3 +9,8 @@ values
     ('Karan'),
     ('Kalees'),
     ('Mahesh');
+
+insert into users_friend
+    (user_id, friend_id)
+values
+    (1, 1);
