@@ -33,3 +33,22 @@ select weekday(last_checkin) from memberships;
 select convert(last_checkin, date), convert(last_checkin, time) from memberships;
 -- For Postgres
 select last_checkin::TIMESTAMP::DATE, last_checkin::TIMESTAMP::TIME from memberships;
+
+-- 9. Finding difference between two timestamps
+-- For MySQL
+select TIMESTAMPDIFF(MINUTE, last_checkin, last_checkout) from memberships;
+-- For Postgres
+select last_checkin - last_checkout from memberships;
+
+-- 10. Finding difference between two dates
+-- For MySQL
+select DATEDIFF(membership_end, membership_start) from memberships;
+-- For Postgres
+select membership_start - membership_end from memberships;
+
+-- 11. Adding days to an existing date
+-- For MySQL
+select DATEADD(membership_start, INTERVAL 7 DAY) from memberships;
+-- For Postgres
+select membership_start + INTERVAL '7 DAY' from memberships;
+
